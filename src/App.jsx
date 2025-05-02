@@ -5,6 +5,7 @@ function App() {
   const [input, setInput] = useState("");
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState(null);
+  const apiKey = import.meta.env.VITE_API_KEY;
 
   const handleChangeInput = (e) => {
     setError(null);
@@ -12,8 +13,9 @@ function App() {
   };
 
   const searchWeather = (query) => {
+    console.log(apiKey);
     fetch(
-      `http://api.weatherapi.com/v1/current.json?key=bc3d974648b545299bb110927242810&q=${query}&aqi=no`
+      `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${query}&aqi=no`
     )
       .then((response) => {
         if (response.ok) {
@@ -58,7 +60,7 @@ function App() {
             <div className="row justify-content-md-center">
               <div className="col-7">
                 <div className="card mt-5">
-                  <h3 class="card-header">
+                  <h3 className="card-header">
                     {weatherData.location.name}, {weatherData.location.country}
                   </h3>
 
