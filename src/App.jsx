@@ -5,14 +5,28 @@ function App() {
   const [input, setInput] = useState("");
   const [weatherData, setWeatherData] = useState(null);
   const [validInput, setValidInput] = useState(false);
+  const [error, setError] = useState(null);
+
+  const handleChangeInput = (e) => {
+    setError(null);
+    setInput(e.target.value);
+  };
 
   const searchWeather = (query) => {
     fetch(
       `http://api.weatherapi.com/v1/current.json?key=bc3d974648b545299bb110927242810&q=${query}&aqi=no`
     )
-      .then((res) => res.json())
-      .then((data) => {
-        setWeatherData(data);
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else if (response.status === 400) {
+          throw new Error("Sorry, we can't find that city...");
+        }
+        throw new Error("Something went wrong! Please check again later.");
+      })
+      .then((data) => setWeatherData(data))
+      .catch((error) => {
+        setError(error.message);
       });
   };
 
@@ -29,7 +43,7 @@ function App() {
             name="myInput"
             className="form-control"
             placeholder="enter city name"
-            onChange={(e) => setInput(e.target.value)}
+            onChange={handleChangeInput}
           ></input>
           <button
             className="btn btn-outline-primary"
@@ -39,6 +53,7 @@ function App() {
             search
           </button>
         </div>
+        {error && <p className="lead mt-5">{error}</p>}
         {weatherData && (
           <div id="results-container" className="container">
             <div className="row justify-content-md-center">
