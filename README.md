@@ -18,3 +18,25 @@ Make an account on [The Weather API](weatherapi.com). You will receive an API ke
 5. Run `npm i` to install all dependencies.
 6. Run `npm run dev` to start the server.
 7. See the output at [http://localhost:5173/](http://localhost:5173/)
+
+## Next Steps
+
+If you want to keep working on this app, here are some things that could be improved:
+
+Style:
+
+- [ ] Improve the styling by adding a new [font](https://fonts.google.com/)
+- [ ] Add a dark mode switch using Bootstrap style classes and React state.
+
+Functionality:
+
+- [ ] Make the input field safer and smarter. You can add input sanitation or show an error message for bad inputs (example: "@32hro>" is definitely not a city name or a longitude).
+  <details>
+  <summary>Hint</summary>
+  <br>
+  Lookup "regex pattern attributes". Here is [a tool](https://regex101.com/) that allows you to test your regular expressions.
+  </details>
+
+Extras:
+
+- [ ] Add [internationalization](https://www.i18next.com/) to all the strings. This allows you to show different translations of the website text.

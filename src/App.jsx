@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import WeatherForecastTile from "./components/WeatherForecastTile";
 
 function App() {
   const [input, setInput] = useState("");
@@ -8,12 +9,13 @@ function App() {
   const apiKey = import.meta.env.VITE_API_KEY;
 
   const handleChangeInput = (e) => {
+    // removes any error message that might be visible
     setError(null);
+    // updates text in search bar
     setInput(e.target.value);
   };
 
   const searchWeather = (query) => {
-    console.log(apiKey);
     fetch(
       `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${query}&aqi=no`
     )
@@ -43,7 +45,7 @@ function App() {
             type="text"
             name="myInput"
             className="form-control"
-            placeholder="enter city name"
+            placeholder="enter city name or lat,long"
             onChange={handleChangeInput}
           ></input>
           <button
@@ -56,26 +58,10 @@ function App() {
         </div>
         {error && <p className="lead mt-5">{error}</p>}
         {weatherData && (
-          <div id="results-container" className="container">
-            <div className="row justify-content-md-center">
-              <div className="col-7">
-                <div className="card mt-5">
-                  <h3 className="card-header">
-                    {weatherData.location.name}, {weatherData.location.country}
-                  </h3>
-
-                  <div className="card-body d-flex justify-content-between align-items-center">
-                    <img src={weatherData.current.condition.icon} />
-                    <div>{weatherData.current.condition.text}</div>{" "}
-                    <div>
-                      {weatherData.current.temp_c}
-                      ºC
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <WeatherForecastTile
+            current={weatherData.current}
+            location={weatherData.location}
+          />
         )}
       </div>
     </div>
