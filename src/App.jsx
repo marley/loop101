@@ -4,7 +4,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   const [input, setInput] = useState("");
   const [weatherData, setWeatherData] = useState(null);
-  const [validInput, setValidInput] = useState(false);
   const [error, setError] = useState(null);
 
   const handleChangeInput = (e) => {
