@@ -1,9 +1,10 @@
 import { useState } from "react";
-import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [input, setInput] = useState("");
   const [weatherData, setWeatherData] = useState(null);
+  const [validInput, setValidInput] = useState(false);
 
   const searchWeather = (query) => {
     fetch(
@@ -16,17 +17,52 @@ function App() {
   };
 
   return (
-    <>
-      <h1>Weather search</h1>
-      <input name="myInput" onChange={(e) => setInput(e.target.value)}></input>
-      <button onClick={() => searchWeather(input)}>search</button>
-      {weatherData && (
-        <p>
-          Weather in {weatherData.location.name}, {weatherData.location.country}{" "}
-          is {weatherData.current.condition.text}
-        </p>
-      )}
-    </>
+    <div id="main-container" className="p-5">
+      <div
+        id="title-container"
+        className="d-flex flex-column align-items-center"
+      >
+        <h1>Weather search</h1>
+        <div id="search-container" className="mt-2 input-group">
+          <input
+            type="text"
+            name="myInput"
+            className="form-control"
+            placeholder="enter city name"
+            onChange={(e) => setInput(e.target.value)}
+          ></input>
+          <button
+            className="btn btn-outline-primary"
+            onClick={() => searchWeather(input)}
+            disabled={input.length === 0}
+          >
+            search
+          </button>
+        </div>
+        {weatherData && (
+          <div id="results-container" className="container">
+            <div className="row justify-content-md-center">
+              <div className="col-7">
+                <div className="card mt-5">
+                  <h3 class="card-header">
+                    {weatherData.location.name}, {weatherData.location.country}
+                  </h3>
+
+                  <div className="card-body d-flex justify-content-between align-items-center">
+                    <img src={weatherData.current.condition.icon} />
+                    <div>{weatherData.current.condition.text}</div>{" "}
+                    <div>
+                      {weatherData.current.temp_c}
+                      ºC
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
   );
 }
 
