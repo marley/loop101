@@ -5,7 +5,7 @@
 Weather Search allows users to search for the current weather in any city in the world.
 
 This is an example web app created as teaching material for the Intro to Web Development course at [FrauenLoop](https://www.frauenloop.org/). It is a basic example of what can be done using [React](https://react.dev/). It uses [React Bootstrap](https://react-bootstrap.github.io/) for styling and it has an API call.
-<img width="796" alt="Screenshot 2025-05-03 at 02 12 48" src="https://github.com/user-attachments/assets/9eabfd1a-2473-4ecd-95f2-cb0d903c31e7" />
+<img width="828" alt="Screenshot 2025-05-03 at 02 28 38" src="https://github.com/user-attachments/assets/5a272030-7b6c-4ed5-96e1-b4eedb1134db" />
 
 ## To Run
 
