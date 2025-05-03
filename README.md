@@ -44,3 +44,8 @@ Functionality:
 Extras:
 
 - [ ] Add [internationalization](https://www.i18next.com/) to all the strings. This allows you to show different translations of the website text. (INTERMEDIATE)
+
+
+# Questions?
+Having trouble running the code? Please post any questions in [Issues](https://github.com/marley/loop101/issues). Please include as many details as possible. Maybe your question will help someone else in the future! I will try to respond to all questions.
+If you are a FrauenLoop student or alumna, you can also ask in our Slack.
