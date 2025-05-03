@@ -10,9 +10,10 @@ This is an example web app created as teaching material for the Intro to Web Dev
 ## To Run
 
 Prerequisite:
-Make an account on [The Weather API](weatherapi.com). You will receive an API key that looks something like this: `xo7x97473289b545299gg573829473829`. You can run the visual part of this project without it, but nothing will happen when you try to search.
 
-1. Download this repository (that is, all the files in this project). You will now have a folder in your computer called `loop101`.
+Make an account on [The Weather API](weatherapi.com). You will receive an API key that looks something like this: `xo7x97473289b545299gg573829473829`.
+
+1. Download this repository (ie, all the files in this project). You will now have a folder in your computer called `loop101`.
 2. Inside `loop101` create a file at the root level called `.env`. (Same place as the `.env.example` file)
 3. Copy the contents of `.env.example` into `.env`.
 4. Copy and paste your API key into the `.env` file.
