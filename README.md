@@ -5,6 +5,7 @@
 Weather Search allows users to search for the current weather in any city in the world.
 
 This is an example web app created as teaching material for the Intro to Web Development course at [FrauenLoop](https://www.frauenloop.org/). It is a basic example of what can be done using [React](https://react.dev/). It uses [React Bootstrap](https://react-bootstrap.github.io/) for styling and it has an API call.
+<img width="796" alt="Screenshot 2025-05-03 at 02 12 48" src="https://github.com/user-attachments/assets/9eabfd1a-2473-4ecd-95f2-cb0d903c31e7" />
 
 ## To Run
 
@@ -25,12 +26,14 @@ If you want to keep working on this app, here are some things that could be impr
 
 Style:
 
-- [ ] Improve the styling by adding a new [font](https://fonts.google.com/)
-- [ ] Add a dark mode switch using Bootstrap style classes and React state.
+- [ ] Improve the styling by adding a new [font](https://fonts.google.com/).
+- [ ] Make this web app responsive. Right now the formatting doesn't look so good for mobile.
+- [ ] Add a dark mode switch using Bootstrap style classes and React state. (INTERMEDIATE)
 
 Functionality:
 
-- [ ] Make the input field safer and smarter. You can add input sanitation or show an error message for bad inputs (example: "@32hro>" is definitely not a city name or a longitude).
+- [ ] Add more interesting weather information to the WeatherForecastTile component.
+- [ ] Make the input field safer and smarter. You can add input sanitation or show an error message for bad inputs (example: "@32hro>" is definitely not a city name or a longitude). (INTERMEDIATE)
   <details>
   <summary>Hint</summary>
   <br>
@@ -39,4 +42,4 @@ Functionality:
 
 Extras:
 
-- [ ] Add [internationalization](https://www.i18next.com/) to all the strings. This allows you to show different translations of the website text.
+- [ ] Add [internationalization](https://www.i18next.com/) to all the strings. This allows you to show different translations of the website text. (INTERMEDIATE)
