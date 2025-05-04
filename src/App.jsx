@@ -18,7 +18,7 @@ function App() {
   const searchWeather = (query) => {
     setWeatherData(null);
     fetch(
-      `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${query}&aqi=no`
+      `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${query}&aqi=no`
     )
       .then((response) => {
         if (response.ok) {
