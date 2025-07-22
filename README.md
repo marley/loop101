@@ -40,7 +40,7 @@ Functionality:
   <details>
   <summary>Hint</summary>
   <br>
-  Lookup "regex pattern attributes". Here is [a tool](https://regex101.com/) that allows you to test your regular expressions.
+  Lookup "regex pattern attributes". Here is <a href="https://regex101.com/">a tool</a> that allows you to test your regular expressions.
   </details>
 
 Extras:
